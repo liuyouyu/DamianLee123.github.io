@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/default.css" type="text/css">
+	<script src="js/particles.js"></script>
+    <script src="js/jqury.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/garden.js"></script>
+</head>
+<body>
+    <audio id="audio" src="mp3/ibelieve.mp3" autoplay loop = "loop"></audio>
+    <div id="mainDiv">
+        <div id="content" style="width: 1110px; height: 625px; margin-top: 201.5px; margin-left: 10px;">
+            <div id="code" style="margin-top: 112.5px;">
+				<span class="comments">/**</span><br>
+				<span class="space"><span class="comments">May 19, 2021, I got your wechat number.</span><br>
+				<span class="space"><span class="comments">May 21, 2021, wet met for the first time.</span><br>
+				<span class="space"><span class="comments">January 6, 2023， we got a marriage certificate.
+				</span><br>
+				<span class="space"><span class="comments">Now, We are waiting for the wedding
+at April 29 2023.</span><br>
+				<span class="space"><span class="comments">On this special day, I will recite a poem for you
+
+				</span><br>
+				<span class="space"><span class="comments">*/</span><br>
+				<p id="sing">
+					在这个情人节，<br>
+					我的心属于你，<br>
+					你是我的阳光，<br>
+					照亮我漆黑的世界，<br>
+					你是我的空气，<br>
+					让我呼吸自由的空间。<br>
+
+					我爱你，老婆，<br>
+					在这个浪漫的日子里，<br>
+					我想说的话很简单，<br>
+					我会一直爱你，直到永远。<br>
+				</p>
+				<img id="biu" src="images/IMG_3381.GIF" alt="" srcset="">
+            </div>
+           
+            <div id="loveHeart">
+				<canvas id="garden" width="670" height="625"></canvas>
+				<div id="words">
+					<div id="messages">
+						Mrs Lu, I have fallen in love with you for
+						<div id="elapseClock"><span class="digit">603</span> days <span class="digit">05</span> hours <span class="digit">05</span> minutes <span class="digit">55</span> seconds</div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br>
+						<div class="signature">-- Damian Li</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div id="copyright">
+		</div>
+    </div>
+
+	<script type="text/javascript">
+		window.onload = function(){
+				setInterval("toggleSound()",1);
+			}
+
+		function toggleSound() {
+					var music = $("#audio");//获取ID  
+					if (music.paused) { //判读是否播放  
+						music.paused = false;
+						music.play(); //没有就播放 
+					}    
+			}
+	</script>
+
+
+    <script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2021, 5, 21);
+		together.setHours(19);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 8000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+
+	</script>
+
+
+<script id="rendered-js" >
+	// ParticlesJS Config.
+			particlesJS("mainDiv", {
+			"particles": {
+			"number": {
+			"value": 80,
+			"density": {
+			"enable": true,
+			"value_area": 700 } },
+	
+	
+			"color": {
+			"value": "#ffffff" },
+	
+			"shape": {
+			"type": "circle",
+			"stroke": {
+			"width": 0,
+			"color": "#000000" },
+	
+			"polygon": {
+			"nb_sides": 5 } },
+	
+	
+			"opacity": {
+			"value": 0.5,
+			"random": false,
+			"anim": {
+			"enable": false,
+			"speed": 0.1,
+			"opacity_min": 0.1,
+			"sync": false } },
+	
+	
+			"size": {
+			"value": 3,
+			"random": true,
+			"anim": {
+			"enable": false,
+			"speed": 10,
+			"size_min": 0.1,
+			"sync": false } },
+	
+	
+			"line_linked": {
+			"enable": true,
+			"distance": 150,
+			"color": "#ffffff",
+			"opacity": 0.4,
+			"width": 1 },
+	
+			"move": {
+			"enable": true,
+			"speed": 2,
+			"direction": "none",
+			"random": false,
+			"straight": false,
+			"out_mode": "out",
+			"bounce": false,
+			"attract": {
+			"enable": false,
+			"rotateX": 600,
+			"rotateY": 1200 } } },
+	
+	
+	
+			"interactivity": {
+			"detect_on": "canvas",
+			"events": {
+			"onhover": {
+			"enable": true,
+			"mode": "grab" },
+	
+			"onclick": {
+			"enable": true,
+			"mode": "push" },
+	
+			"resize": true },
+	
+			"modes": {
+			"grab": {
+			"distance": 140,
+			"line_linked": {
+				"opacity": 1 } },
+	
+	
+			"bubble": {
+			"distance": 400,
+			"size": 40,
+			"duration": 2,
+			"opacity": 8,
+			"speed": 3 },
+	
+			"repulse": {
+			"distance": 200,
+			"duration": 0.4 },
+	
+			"push": {
+			"particles_nb": 4 },
+	
+			"remove": {
+			"particles_nb": 2 } } },
+	
+	
+	
+			"retina_detect": true });
+	
+			</script>
+</body>
+</html>
